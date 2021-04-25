@@ -1,7 +1,7 @@
 language: python
 python:
   - "2.7"
-  - "3"
+  - "3.8"
 git:
   depth: 1
 branches:
@@ -15,10 +15,11 @@ before_install:
   - export
   - uname -a
   - lsb_release -a
+  - ip address
 before_script:
-  - echo -e "[TESTING] This is executed on BEFORE_SCRIPT"
+  - echo "[TESTING] This is executed on BEFORE_SCRIPT"
 script:
-  - echo -e "[TESTING] This is executed on SCRIPT"
+  - echo "[TESTING] This is executed on SCRIPT"
 after_success:
   - echo "[TESTING] This is executed on AFTER_SUCCESS"
 after_failure:
