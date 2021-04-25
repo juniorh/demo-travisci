@@ -9,11 +9,13 @@ branches:
   - master
   - /^travis-.*$/
 env:
-  - PRE_KEY_1=VALUE_1
-  - PRE_KEY_2=VALUE_2 OPT=VALUE_OPT_2
+#  - PRE_KEY_1=VALUE_1
+  - PRE_KEY_2=VALUE_2 PRE_OPT_2=VALUE_OPT_2
 jobs:
   include:
     - stage: STAGE-1
+      before_script:
+        - echo "This is executed on job BEFORE_SCRIPT in STAGE-1"
       script:
         - echo "This is executed on job STAGE-1"
     - stage: STAGE-2
