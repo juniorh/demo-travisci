@@ -1,6 +1,5 @@
-language: node_js
-node_js:
-  - "8"
-cache: yarn
+language: python
+python:
+  - "2.7"
 script:
-  - echo 'Build starts!!'
+  - echo -e "[TESTING] This is executed on SCRIPT"
