@@ -1,16 +1,31 @@
 language: python
 python:
-#  - "2.7"
-  - "3.8"
+  - 2.7
+#  - "3.8"
 git:
   depth: 1
 branches:
   only:
   - master
   - /^travis-.*$/
+env:
+  - PRE_KEY_1=VALUE_1
+  - PRE_KEY_2=VALUE_2 OPT=VALUE_OPT_2
+jobs:
+  include:
+    - stage: STAGE-1
+      script:
+        - echo "This is executed on job STAGE-1"
+    - stage: STAGE-2
+      script:
+        - echo "This is executed on job STAGE-2"
 before_install:
   - echo "[TESTING] This is executed on BEFORE_INSTALL"
   - pwd
+  - id
+  - ls -la
+  - df -h
+  - mount
   - env | sort
 #  - export | sort
   - uname -a
