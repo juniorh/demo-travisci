@@ -1,0 +1,29 @@
+language: python
+python:
+  - "2.7"
+git:
+  depth: 1
+branches:
+  only:
+    - master
+before_install:
+  - echo "[TESTING] This is executed on BEFORE_INSTALL"
+  - pwd
+  - env
+  - export
+  - uname -a
+  - lsb_release -a
+before_script:
+  - echo -e "[TESTING] This is executed on BEFORE_SCRIPT"
+script:
+  - echo -e "[TESTING] This is executed on SCRIPT"
+after_success:
+  - echo "[TESTING] This is executed on AFTER_SUCCESS"
+after_failure:
+  - echo "[TESTING] This is executed on AFTER_FAILURE"
+before_deploy:
+  - echo "[TESTING] This is executed on BEFORE_DEPLOY"
+after_deploy:
+  - echo "[TESTING] This is executed on DEPLOY"
+after_script:
+  - echo "[TESTING] This is executed on AFTER_SCRIPT"
